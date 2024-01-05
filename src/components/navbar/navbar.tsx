@@ -12,9 +12,11 @@ const Navbar = (props: Props) => {
 	
 	const signHandlerOut = (params: any) => {
 		setIsAuthenticated(false);
+		
 	  };
 	  const signHandlerIn = (params: any) => {
 		setIsAuthenticated(true);
+		
 	  };
 
 	return (
