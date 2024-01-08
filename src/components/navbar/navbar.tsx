@@ -1,11 +1,13 @@
 import {Link} from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
 
 type Props = {};
 
 
 const Navbar = (props: Props) => {
-	
+	const authContext = useContext(AuthContext)
+	console.log(authContext);
 	return (
 		
 		<nav
