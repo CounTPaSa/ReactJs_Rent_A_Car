@@ -6,7 +6,6 @@ type Props = {}
 const Homepage = (props: Props) => {
   return (
   <>
-    <Login></Login>
   </>
   )
 }

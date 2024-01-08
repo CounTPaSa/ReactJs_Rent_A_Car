@@ -1,12 +1,14 @@
 import {Link} from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
+import SignedIn from "../SignedIn/SignedIn";
+import SignedOut from "../SignedOut/SignedOut";
 
 type Props = {};
 
 
 const Navbar = (props: Props) => {
-	const authContext = useContext(AuthContext)
+	const authContext:any = useContext(AuthContext)
 	console.log(authContext);
 	return (
 		
@@ -49,6 +51,7 @@ const Navbar = (props: Props) => {
 							</Link>
 						</li>
 					</ul>
+					{!authContext.isAuthenticated?<SignedOut></SignedOut>:<SignedIn></SignedIn>}
 				</div>
 			</div>
 		</nav>
