@@ -1,6 +1,4 @@
 import {Link} from "react-router-dom";
-import SignedIn from "../SignedIn/SignedIn";
-import SignedOut from "../SignedOut/SignedOut";
 import { useState } from "react";
 
 type Props = {};
@@ -8,17 +6,6 @@ type Props = {};
 
 const Navbar = (props: Props) => {
 	
-	const [isAuthenticated, setIsAuthenticated] = useState(false)
-	
-	const signHandlerOut = (params: any) => {
-		setIsAuthenticated(false);
-		
-	  };
-	  const signHandlerIn = (params: any) => {
-		setIsAuthenticated(true);
-		
-	  };
-
 	return (
 		
 		<nav
@@ -60,7 +47,6 @@ const Navbar = (props: Props) => {
 							</Link>
 						</li>
 					</ul>
-					{isAuthenticated?<SignedIn signOut={signHandlerOut}/>:<SignedOut signIn={signHandlerIn}/>}		
 				</div>
 			</div>
 		</nav>
