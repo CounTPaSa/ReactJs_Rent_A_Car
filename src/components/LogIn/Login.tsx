@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { AuthContext } from '../../contexts/AuthContext'
 import { useNavigate } from 'react-router'
+import { Link } from 'react-router-dom'
 
 type Props = {}
 
@@ -22,10 +23,9 @@ const navigate:any = useNavigate()
     <label className="form-label">Password</label>
     <input type="password" className="form-control" id="exampleInputPassword1"/>
   </div>
-  <button type="button" onClick={() => {
-    authContext.setIsAuthenticated(true)
-     navigate("/"); 
-    }} className="btn btn-primary">Submit</button>
+  <Link to={"/"} type="button" onClick={() => {
+    authContext.setIsAuthenticated(false)
+    }} className="btn btn-primary">Submit</Link>
 </form>
     </div>
     </div>

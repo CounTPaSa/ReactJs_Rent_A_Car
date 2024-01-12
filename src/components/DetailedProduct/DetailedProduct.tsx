@@ -5,6 +5,9 @@ type Props = {
 }
 
 const DetailedProduct = (props: any) => {
+ 
+  
+
   return (
     <div className="container mt-5">
     <div className="row">
@@ -23,7 +26,7 @@ const DetailedProduct = (props: any) => {
         <button className="btn btn-success">
             Satın Al
           </button>
-          <button className="btn btn-primary ml-2">
+          <button  className="btn btn-primary ml-2">
             Sepete Ekle
           </button>
       </div>

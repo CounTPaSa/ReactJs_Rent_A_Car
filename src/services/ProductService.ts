@@ -6,7 +6,7 @@ class ProductService
 {
     getAll()
     {
-        return  axios.get<GetAllProductsModel>("https://dummyjson.com/products");
+        return axios.get<GetAllProductsModel>("https://dummyjson.com/products");
     }
 
     GetById(id:string)
