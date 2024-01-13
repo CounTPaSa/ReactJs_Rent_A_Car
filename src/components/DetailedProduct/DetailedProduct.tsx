@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { ProductModel } from '../../models/requests/ProductModel'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../../store/slices/cartSlice'
 
 type Props = {
 }
 
 const DetailedProduct = (props: any) => {
- 
   
+  const dispatch = useDispatch();
+
+const addProductToCart = () =>{
+  dispatch(addToCart(props.product))
+}
 
   return (
     <div className="container mt-5">
@@ -23,11 +29,11 @@ const DetailedProduct = (props: any) => {
         <p>Stock: {props.product.stock}</p>
         <p>Brand: {props.product.brand}</p>
         <p>Category: {props.product.category}</p>
-        <button className="btn btn-success">
-            Satın Al
+          <button className="btn btn-success">
+        Satin Al
           </button>
-          <button  className="btn btn-primary ml-2">
-            Sepete Ekle
+        <button onClick={addProductToCart} className="btn btn-primary ml-2">
+        Sepete Ekle
           </button>
       </div>
     </div>

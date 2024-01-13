@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import SignedOut from "../SignedOut/SignedOut";
 import { useSelector } from "react-redux";
@@ -11,8 +11,8 @@ const Navbar = (props: Props) => {
 	const authContext:any = useContext(AuthContext)
 	console.log(authContext);
 
-	const cartState = useSelector((state:any) => state.cart);
-	console.log(cartState);
+	const cartState = useSelector((state: any) => state.cart); 
+	console.log(cartState) ;
 
 	return (
 		
@@ -54,7 +54,13 @@ const Navbar = (props: Props) => {
 								Ürün Ekle
 							</Link>
 						</li>
+						<li className="nav-item">
+							<Link className="nav-link" to={""}>
+								Sepetteki urun sayisi : {cartState.cartItems.length}
+							</Link>
+						</li>
 					</ul>
+					
 					{authContext.isAuthenticated && (<SignedOut></SignedOut>)}
 				</div>
 			</div>

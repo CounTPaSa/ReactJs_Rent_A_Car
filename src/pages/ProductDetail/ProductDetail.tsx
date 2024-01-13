@@ -29,8 +29,6 @@ const ProductDetail = (props: Props) => {
             if(params.id)
             {
                 fetchDetails(params.id);
-                console.log(product?.title);
-
             }
         }, [])
 
